@@ -3,8 +3,7 @@
 #Python Libs
 import sys, time
 
-#numpy
-import numpy as np
+
 
 #OpenCV
 import cv2
@@ -22,7 +21,7 @@ class Lane_Detector:
         self.cv_bridge = CvBridge()
 
         #### REMEMBER TO CHANGE THE TOPIC NAME! #####        
-        self.image_sub = rospy.Subscriber('/<booty>/camera_node/image/compressed', CompressedImage, self.image_callback, queue_size=1)
+        self.image_sub = rospy.Subscriber('/booty/camera_node/image/compressed', CompressedImage, self.image_callback, queue_size=1)
         #############################################
 
         rospy.init_node("my_lane_detector")
