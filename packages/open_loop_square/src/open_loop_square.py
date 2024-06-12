@@ -40,7 +40,7 @@ class Drive_Square:
     def move_robot(self):
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = 0.3  # straight line velocity
+        self.cmd_msg.v = 0.25  # straight line velocity
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
@@ -49,14 +49,14 @@ class Drive_Square:
         # Rotate 90 degrees clockwise
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0
-        self.cmd_msg.omega = -0.3  # rotate clockwise
+        self.cmd_msg.omega = -0.2 # rotate clockwise
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Rotate clockwise!")
         rospy.sleep(1)  
 
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = 0.3
+        self.cmd_msg.v = 0.25
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
@@ -65,7 +65,7 @@ class Drive_Square:
         # Rotate 90 degrees clockwise
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0
-        self.cmd_msg.omega = -0.3
+        self.cmd_msg.omega = -0.2
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Rotate clockwise!")
         rospy.sleep(1)  # rotation time
@@ -81,7 +81,7 @@ class Drive_Square:
         # Rotate 90 degrees clockwise
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0
-        self.cmd_msg.omega = -0.3
+        self.cmd_msg.omega = -0.2
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Rotate clockwise!")
         rospy.sleep(1)  # rotation time
@@ -97,7 +97,7 @@ class Drive_Square:
         # Rotate 90 degrees clockwise
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0
-        self.cmd_msg.omega = -0.3
+        self.cmd_msg.omega = -0.25
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Rotate clockwise!")
         rospy.sleep(1)  # rotation time
