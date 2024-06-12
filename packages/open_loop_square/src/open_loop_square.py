@@ -40,7 +40,7 @@ class Drive_Square:
     def move_robot(self):
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = -0.3  # straight line velocity
+        self.cmd_msg.v = 0.3  # straight line velocity
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
@@ -56,7 +56,7 @@ class Drive_Square:
 
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = -0.3
+        self.cmd_msg.v = 0.3
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
@@ -72,7 +72,7 @@ class Drive_Square:
 
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = -0.3
+        self.cmd_msg.v = 0.3
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
@@ -88,7 +88,7 @@ class Drive_Square:
 
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = -0.3
+        self.cmd_msg.v = 0.3
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
