@@ -40,23 +40,23 @@ class Drive_Square:
     def move_robot(self):
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = 0.5  # straight line velocity
+        self.cmd_msg.v = 0.3  # straight line velocity
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
-        rospy.sleep(2)  # straight line driving time (adjust based on your robot's speed)
+        rospy.sleep(2)  
 
         # Rotate 90 degrees clockwise
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0
-        self.cmd_msg.omega = -0.5  # rotate clockwise
+        self.cmd_msg.omega = -0.3  # rotate clockwise
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Rotate clockwise!")
-        rospy.sleep(2)  # rotation time (adjust based on your robot's speed)
+        rospy.sleep(2)  
 
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = 0.5
+        self.cmd_msg.v = 0.3
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
@@ -65,35 +65,43 @@ class Drive_Square:
         # Rotate 90 degrees clockwise
         self.cmd_msg.header.stamp = rospy.Time.now()
         self.cmd_msg.v = 0.0
-        self.cmd_msg.omega = -0.5
-        self.pub.publish(self.cmd_msg)
-        rospy.loginfo("Rotate clockwise!")
-        rospy.sleep(2)  # rotation time
-
-        # Drive forward for 1 meter
-        self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = 0.5
-        self.cmd_msg.omega = 0.0
-        self.pub.publish(self.cmd_msg)
-        rospy.loginfo("Forward!")
-        rospy.sleep(2)  # straight line driving time
-
-        # Rotate 90 degrees clockwise
-        self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = 0.0
-        self.cmd_msg.omega = -0.5
+        self.cmd_msg.omega = -0.3
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Rotate clockwise!")
         rospy.sleep(2)  # rotation time
 
         # Drive forward for 1 meter
         self.cmd_msg.header.stamp = rospy.Time.now()
-        self.cmd_msg.v = 0.5
+        self.cmd_msg.v = 0.3
         self.cmd_msg.omega = 0.0
         self.pub.publish(self.cmd_msg)
         rospy.loginfo("Forward!")
         rospy.sleep(2)  # straight line driving time
 
+        # Rotate 90 degrees clockwise
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.0
+        self.cmd_msg.omega = -0.3
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Rotate clockwise!")
+        rospy.sleep(2)  # rotation time
+
+        # Drive forward for 1 meter
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.3
+        self.cmd_msg.omega = 0.0
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Forward!")
+        rospy.sleep(2)  # straight line driving time
+
+        # Rotate 90 degrees clockwise
+        self.cmd_msg.header.stamp = rospy.Time.now()
+        self.cmd_msg.v = 0.0
+        self.cmd_msg.omega = -0.3
+        self.pub.publish(self.cmd_msg)
+        rospy.loginfo("Rotate clockwise!")
+        rospy.sleep(2)  # rotation time
+        
         self.stop_robot()
 
 if __name__ == '__main__':
