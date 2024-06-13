@@ -92,7 +92,7 @@ class Lane_Detector:
     def run(self):
         rospy.spin()
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     try:
         lane_detector_instance = Lane_Detector()
         lane_detector_instance.run()
