@@ -23,7 +23,7 @@ class Lane_Detector:
         self.cv_bridge = CvBridge()
 
         # Subscribing to the image topic
-        self.image_sub = rospy.Subscriber('/shravel/camera_node/image/compressed', CompressedImage, self.image_callback, queue_size=1)
+        self.image_sub = rospy.Subscriber('/booty/camera_node/image/compressed', CompressedImage, self.image_callback, queue_size=1)
         
         rospy.init_node("my_lane_detector")
 
@@ -63,14 +63,19 @@ class Lane_Detector:
         yellow_lines = self.apply_hough_transform(yellow_mask)
 
         ## Draw lines found on both Hough Transforms on the cropped image
-        self.draw_lines(cropped_img, white_lines)
-        self.draw_lines(cropped_img, yellow_lines)
+        hough_img = cropped_img.copy()
+        self.draw_lines(hough_img, white_lines)
+        self.draw_lines(hough_img, yellow_lines)
 
         ## Convert the processed image back to RGB Color Space
-        processed_img = cv2.cvtColor(cropped_img, cv2.COLOR_BGR2RGB)
+        processed_img = cv2.cvtColor(hough_img, cv2.COLOR_BGR2RGB)
 
-        # Display the processed image
-        cv2.imshow('Processed Image', processed_img)
+        # Display the images in separate windows
+        cv2.imshow('trim', cropped_img)
+        cv2.imshow('WhiteMask', white_mask)
+        cv2.imshow('YellowMask', yellow_mask)
+        cv2.imshow('Original', img)
+        cv2.imshow('Hough Transforms', processed_img)
         cv2.waitKey(1)
 
     def apply_hough_transform(self, img):
